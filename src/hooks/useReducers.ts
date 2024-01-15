@@ -1,21 +1,38 @@
 import { useReducer } from 'react'
 import { globalState, initialState } from '../reducers/globalState'
 import { ACTION_GLOBAL_STATE } from '../actions/globalState'
+import { StarWarsApi } from '../services/swapi'
 
 export function useReducers () {
   const [state, dispatch] = useReducer(globalState, initialState)
 
   function allChararacters () {
     console.log('CUANTAS VECES SE EJECUTA')
-    dispatch({ type: ACTION_GLOBAL_STATE.ALL_CHARACTERS })
+    dispatch({ type: ACTION_GLOBAL_STATE.LOADING })
+    StarWarsApi({ type: ACTION_GLOBAL_STATE.ALL_CHARACTERS.toLowerCase() })
+      .then(
+        response => { dispatch({ type: ACTION_GLOBAL_STATE.ALL_CHARACTERS, payload: response }) }
+      )
+      .catch(e => { console.log(e) })
   }
 
   function filter (payload) {
-    dispatch({ type: ACTION_GLOBAL_STATE.FILTER, payload })
+    dispatch({ type: ACTION_GLOBAL_STATE.LOADING })
+    StarWarsApi({ type: state.type.toLowerCase(), search: payload })
+      .then(
+        response => { dispatch({ type: ACTION_GLOBAL_STATE.FILTER, payload: response }) }
+      )
+      .catch(e => { console.log(e) })
+    // dispatch({ type: ACTION_GLOBAL_STATE.FILTER, payload })
   }
 
   function allFilms () {
-    dispatch({ type: ACTION_GLOBAL_STATE.ALL_FILMS })
+    dispatch({ type: ACTION_GLOBAL_STATE.LOADING })
+    StarWarsApi({ type: ACTION_GLOBAL_STATE.ALL_FILMS.toLowerCase() })
+      .then(
+        response => { dispatch({ type: ACTION_GLOBAL_STATE.ALL_FILMS, payload: response }) }
+      )
+      .catch(e => { console.log(e) })
   }
 
   function allStarships () {

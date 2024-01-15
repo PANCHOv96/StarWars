@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom'
 import { useCharacters } from '../hooks/useCharacters'
 
 export function Characters () {
-  const { characters } = useCharacters()
+  const { characters, loading } = useCharacters()
 
   return (
       <>
+        { loading && <>CARGANDO</> }
         <h2>CHARACTERS</h2>
         {characters?.map(character => {
           return (

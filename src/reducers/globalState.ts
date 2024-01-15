@@ -2,7 +2,8 @@ import { ActionGlobalState } from '../actions/globalState'
 
 export const initialState = {
   data: [],
-  type: ''
+  type: '',
+  loading: false
 }
 
 export function globalState (state = initialState, action) {

@@ -14,8 +14,10 @@ export function Filters () {
 
   return (
         <div>
-            <input type="text" onChange={handleChange} placeholder={`search ${toSearch.toLowerCase()}...`} value={search}/>
+            <input type="text" onChange={handleChange} placeholder={'search...'} value={search}/>
             <input type="button" onClick={handleClick} value='search'/>
         </div>
   )
 }
+
+// `search ${toSearch.toLowerCase()}...`

@@ -9,5 +9,5 @@ export function useCharacters () {
     allChararacters()
   }, [])
 
-  return { characters }
+  return { characters, loading: state.loading }
 }
