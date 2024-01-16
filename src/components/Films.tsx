@@ -9,7 +9,7 @@ export function Films () {
         <h2>FILMS</h2>
         {films?.map(film => {
           return (
-            <div key={film.title} className='Personaje'>
+            <div key={film.url} className='Personaje'>
                 {film.title}
                 <Link to={'info'} state={film} >+</Link>
             </div>

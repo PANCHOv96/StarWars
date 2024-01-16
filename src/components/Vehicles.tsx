@@ -10,7 +10,7 @@ export function Vehicles () {
             <h2>VEHICLES</h2>
             {vehicles?.map(vehicle => {
               return (
-                <div key={vehicle.name} className='Personaje'>
+                <div key={vehicle.url} className='Personaje'>
                     {vehicle.name}
                     <Link to={'info'} state={vehicles} >+</Link>
                 </div>

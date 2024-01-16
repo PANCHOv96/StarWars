@@ -23,7 +23,6 @@ export function useReducers () {
         response => { dispatch({ type: ACTION_GLOBAL_STATE.FILTER, payload: response }) }
       )
       .catch(e => { console.log(e) })
-    // dispatch({ type: ACTION_GLOBAL_STATE.FILTER, payload })
   }
 
   function allFilms () {
@@ -37,15 +36,35 @@ export function useReducers () {
 
   function allStarships () {
     dispatch({ type: ACTION_GLOBAL_STATE.ALL_STARSHIPS })
+    StarWarsApi({ type: ACTION_GLOBAL_STATE.ALL_STARSHIPS.toLowerCase() })
+      .then(
+        response => { dispatch({ type: ACTION_GLOBAL_STATE.ALL_STARSHIPS, payload: response }) }
+      )
+      .catch(e => { console.log(e) })
   }
   function allVehicles () {
     dispatch({ type: ACTION_GLOBAL_STATE.ALL_VEHICLES })
+    StarWarsApi({ type: ACTION_GLOBAL_STATE.ALL_VEHICLES.toLowerCase() })
+      .then(
+        response => { dispatch({ type: ACTION_GLOBAL_STATE.ALL_VEHICLES, payload: response }) }
+      )
+      .catch(e => { console.log(e) })
   }
   function allSpecies () {
     dispatch({ type: ACTION_GLOBAL_STATE.ALL_SPECIES })
+    StarWarsApi({ type: ACTION_GLOBAL_STATE.ALL_SPECIES.toLowerCase() })
+      .then(
+        response => { dispatch({ type: ACTION_GLOBAL_STATE.ALL_SPECIES, payload: response }) }
+      )
+      .catch(e => { console.log(e) })
   }
   function allPlanets () {
     dispatch({ type: ACTION_GLOBAL_STATE.ALL_PLANETS })
+    StarWarsApi({ type: ACTION_GLOBAL_STATE.ALL_PLANETS.toLowerCase() })
+      .then(
+        response => { dispatch({ type: ACTION_GLOBAL_STATE.ALL_PLANETS, payload: response }) }
+      )
+      .catch(e => { console.log(e) })
   }
 
   return { state, filter, allChararacters, allFilms, allStarships, allVehicles, allSpecies, allPlanets }

@@ -9,7 +9,7 @@ export function Planets () {
             <h2>PLANETS</h2>
             {planets?.map(planet => {
               return (
-                <div key={planet.name} className='Personaje'>
+                <div key={planet.url} className='Personaje'>
                     {planet.name}
                     <Link to={'info'} state={planet} >+</Link>
                 </div>

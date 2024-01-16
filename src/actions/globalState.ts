@@ -1,10 +1,10 @@
-import { allPeople } from '../mocks/with-results-characters'
-import { allFilms } from '../mocks/with-results-films'
-import { allStarships } from '../mocks/with-results-starships'
-import { allVehicles } from '../mocks/with-results-vehicles'
-import { allSpecies } from '../mocks/with-results-species'
-import { allPlanets } from '../mocks/with-results-planets'
-import { StarWarsApi } from '../services/swapi'
+// import { allPeople } from '../mocks/with-results-characters'
+// import { allFilms } from '../mocks/with-results-films'
+// import { allStarships } from '../mocks/with-results-starships'
+// import { allVehicles } from '../mocks/with-results-vehicles'
+// import { allSpecies } from '../mocks/with-results-species'
+// import { allPlanets } from '../mocks/with-results-planets'
+// import { StarWarsApi } from '../services/swapi'
 
 export const ACTION_GLOBAL_STATE = {
   ALL_CHARACTERS: 'PEOPLE',

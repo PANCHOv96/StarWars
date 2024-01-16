@@ -9,7 +9,7 @@ export function Starships () {
             <h2>STARSHIPS</h2>
             {starships?.map(starship => {
               return (
-                <div key={starship.name} className='Personaje'>
+                <div key={starship.url} className='Personaje'>
                     {starship.name}
                     <Link to={'info'} state={starship} >+</Link>
                 </div>
